@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+.home {
+	margin: 0 auto;
+	
+	
+	height: 100vh;
+	
+	max-width: 1200rpx;
+}
+.home-none {
+	margin-top: 60rpx;
+	font-size: 36rpx;
+	text-align: center;
+}
+

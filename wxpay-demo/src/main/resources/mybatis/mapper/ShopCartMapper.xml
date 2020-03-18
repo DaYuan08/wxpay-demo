@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuan.java.wxpay.demo.mapper.ShopCartMapper">
+
+    <resultMap id="shopCartMap" type="ShopCart" autoMapping="true">
+        <association property="book" javaType="Book" autoMapping="true"/>
+    </resultMap>
+
+    <insert id="addShopCart">
+        INSERT INTO `shopcart` (`user_id`, `book_id`) VALUES (#{userId}, #{book.id});
+    </insert>
+
+    <delete id="deleteShopCart">
+        DELETE FROM `shopcart` WHERE `id` = #{id}
+    </delete>
+
+    <delete id="deleteShopCartByBook">
+        DELETE FROM `shopcart` WHERE `book_id` = #{bookId} AND `user_id` = #{userId}
+    </delete>
+
+    <update id="updateShopCart">
+        UPDATE `shopcart` SET `order_id` = #{orderId} WHERE `id` IN
+        <foreach collection="shopCartIds" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="selectShopCarts" resultMap="shopCartMap">
+        SELECT s.`id`, s.`user_id`, s.`book_id`, s.`order_id`, s.`create_time`, s.`update_time`,
+        b.`id`, b.`title`, b.`author`, b.`rating`, b.`price`, b.`cover`
+        FROM `shopcart` s, `book` b WHERE s.`book_id` = b.`id` AND s.`user_id` = #{userId} AND s.`order_id` IS NULL ORDER BY s.`update_time` DESC
+    </select>
+
+    <select id="selectSingle" resultType="integer">
+        SELECT `book_id` FROM `shopcart` WHERE `user_id` = #{userId} AND `book_id` = #{bookId} AND `order_id` IS NULL
+    </select>
+
+</mapper>
