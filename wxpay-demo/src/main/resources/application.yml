@@ -35,14 +35,14 @@ mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
 wx:
   miniapp:
-    appid: wx74eb8c9316b66f91
-    secret: fdba93de4b77d6b615b4b7178d28d79b
+    appid: xxxxx
+    secret: xxxxx
   pay:
-    app-id: wx74eb8c9316b66f91
-    mch-id: 1508262781
-    mch-key: lakJYzxp5znq5Pz1JYDBGInzrUNVAeYj
-    keyPath: "classpath:/static/apiclient_cert.p12"
+    app-id: xxxx
+    mch-id: xxxx
+    mch-key: xxxx
+    keyPath: "xxxx"
     notifyUrl: ""
   mp:
-    app-id: wx0f0a4bbe2fc2fc3a
-    secret: 716a65aa345ba2c8324f5612cdb5d251
+    app-id: xxxxx
+    secret: xxxxxx
