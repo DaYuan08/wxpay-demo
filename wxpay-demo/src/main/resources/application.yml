@@ -38,11 +38,11 @@ wx:
     appid: xxxxx
     secret: xxxxx
   pay:
-    app-id: xxxx
-    mch-id: xxxx
-    mch-key: xxxx
-    keyPath: "xxxx"
+    app-id: xxxxx
+    mch-id: xxxxx
+    mch-key: xxxxx
+    keyPath: "xxxxx"
     notifyUrl: ""
   mp:
     app-id: xxxxx
-    secret: xxxxxx
+    secret: xxxxx
